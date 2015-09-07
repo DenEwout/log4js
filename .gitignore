@@ -7,3 +7,4 @@ log4js/node_modules/
 log4js-servlet/target/
 log4js-servlet/lib/
 log4js-site/build/
+log4js/.idea/
