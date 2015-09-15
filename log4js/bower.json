@@ -8,7 +8,6 @@
   ],
   "description": "Log4js - The Logging Framework for JavaScript (forked by Qmino)",
   "main": [
-    "target/log4js.min.js",
     "target/log4js.js"
   ],
   "ignore": [
