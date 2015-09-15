@@ -24,7 +24,8 @@ grunt.initConfig({
               "src/main/js/layout.js",
               "src/main/js/layouts/*.js",
               "src/main/js/date-formatter.js",
-              "src/main/js/fifo-buffer.js"],
+              "src/main/js/fifo-buffer.js",
+              "src/main/js/log4js-all.js"],
         dest: "target/files/<%= pkg.name %>/js/<%= pkg.name %>.combined.js"
       }
     },
