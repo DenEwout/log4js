@@ -1789,7 +1789,6 @@ Log4js.QminoAppender.prototype = Log4js.extend(new Log4js.Appender(), {
         for (var i = 0; i < gelfObjects.length; i++) {
             var http = new XMLHttpRequest();
             http.open("POST", this.loggingHost + this.path, true);
-            http.setRequestHeader("Access-Control-Allow-Origin", this.loggingHost);
             http.onreadystatechange = function () {
                 //TODO: do stuff.
             }

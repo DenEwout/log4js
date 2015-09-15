@@ -26,7 +26,7 @@ grunt.initConfig({
               "src/main/js/date-formatter.js",
               "src/main/js/fifo-buffer.js",
               "src/main/js/log4js-all.js"],
-        dest: "target/files/<%= pkg.name %>/js/<%= pkg.name %>.combined.js"
+        dest: "target/<%= pkg.name %>.js"
       }
     },
 
@@ -40,13 +40,13 @@ grunt.initConfig({
       },
       build : {
          src     : ['**/*.js', '!*.min.js'],
-         cwd     : 'target/files/<%= pkg.name %>/js/',
+         cwd     : 'target/',
          dest    : 'target/',
          expand  : true,
          rename  : function (dest, src) {
             var folder    = src.substring(0, src.lastIndexOf('/'));
             var filename  = src.substring(src.lastIndexOf('/'), src.length);
-            filename  = filename.substring(0, filename.lastIndexOf('.')).replace(/\.combined/, "");
+            filename  = filename.substring(0, filename.lastIndexOf('.'));
 
             return dest + folder + filename + '.min.js';
          }

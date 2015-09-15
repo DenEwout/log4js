@@ -1,13 +1,15 @@
 {
-  "name": "log4js",
-  "version": "2.0.0Beta1",
-  "homepage": "https://github.com/stritti/log4js",
+  "name": "qmino-log4js",
+  "version": "2.0.0",
+  "homepage": "https://github.com/DenEwout/log4js",
   "authors": [
-    "stritti <stephan@st-strittmatter.name>"
+    "stritti <stephan@st-strittmatter.name>",
+    "Ewout Van Gossum <ewout.vangossum@qmino.com>"
   ],
-  "description": "Log4js - The Logging Framework for JavaScript",
+  "description": "Qmino Log4js - The Qmino Logging Framework for JavaScript",
   "main": [
-    "target/log4js.min.js"
+    "target/log4js.min.js",
+    "target/log4js.js"
   ],
   "ignore": [
   ],
