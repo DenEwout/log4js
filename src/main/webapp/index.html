@@ -18,7 +18,7 @@
 <html>
 <head>
     <title>Log4js tests</title>
-    <script src="../../../target/files/log4js/js/log4js.combined.js" type="text/javascript"></script>
+    <script src="../../../target/log4js.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         <!-- //
@@ -65,8 +65,10 @@
 
         var qminoLog = new Log4js.getLogger("qminoTest");
         qminoLog.setLevel(Log4js.Level.ALL);
-        var qminoAppender = new Log4js.QminoAppender("http://log.miredot.com","/gelf", Log4js.Level.ERROR, 20);
+        var qminoAppender = new Log4js.QminoAppender("http://log.miredot.com", "/gelf", Log4js.Level.ERROR, 20);
         qminoLog.setAppenders([new Log4js.BrowserConsoleAppender(), qminoAppender]);
+
+        document.cookie = "test=test COOKIE COOKIE;foo=bar";
         // -->
     </script>
 

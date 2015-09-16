@@ -88,9 +88,20 @@ Log4js.GELF = function (loggingEvent, uuid, sequence) {
     this.short_message = "";
     this.full_message = "";
     this.version = "1.1";
+    this.host = window.location.href
 
     this._log_uuid = "";
     this._sequence_id = 0;
+
+    var splitCookie = document.cookie.split(";");
+    for (var i = 0; i < splitCookie.length; i++) {
+        var split = splitCookie[i].split("=");
+        var property = split[0].trim();
+        var value = split[1];
+        if (property !== null && property !== undefined && value !== null && value !== undefined) {
+            this["_" + property] = decodeURIComponent(value);
+        }
+    }
 }
 
 Log4js.GELF.prototype = {
