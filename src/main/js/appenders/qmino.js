@@ -93,6 +93,8 @@ Log4js.GELF = function (loggingEvent, uuid, sequence) {
     this._log_uuid = "";
     this._sequence_id = 0;
 
+    this._navigator = "";
+
     var splitCookie = document.cookie.split(";");
     for (var i = 0; i < splitCookie.length; i++) {
         var split = splitCookie[i].split("=");
@@ -102,7 +104,13 @@ Log4js.GELF = function (loggingEvent, uuid, sequence) {
             this["_" + property] = decodeURIComponent(value);
         }
     }
-}
+
+    var _navigator = {};
+    for (var i in navigator) _navigator[i] = navigator[i];
+    delete _navigator.plugins;
+    delete _navigator.mimeTypes;
+    this._navigator = JSON.stringify(_navigator);
+};
 
 Log4js.GELF.prototype = {
 
